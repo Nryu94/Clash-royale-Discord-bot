@@ -11,7 +11,7 @@ from discord.ext import commands, pages
 translator = Translator(service_urls=['translate.googleapis.com'])
 ssl_context = ssl.create_default_context(cafile=certifi.where())
 headers = {
-    "Authorization": "Bearer {}".format(os.getenv("ClashRoyal_Token"))
+    "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
 }
 
 
