@@ -35,7 +35,7 @@ class Clan(commands.Cog):
             PATH = "https://api.clashroyale.com/v1/locations/" + jid[location]["id"] + "/rankings/clans?limit=" + limit
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(PATH, headers=headers) as resp:
+            async with session.get(PATH, headers=headers, ssl_context=ssl_context) as resp:
                 if resp.status == 200:
                     clans = await resp.json()
                     clan = clans["items"]
