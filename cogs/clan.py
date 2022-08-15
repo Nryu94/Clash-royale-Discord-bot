@@ -17,7 +17,7 @@ ssl_context = ssl.create_default_context(cafile=certifi.where())
 headers = {
     "Authorization": "Bearer {}".format(os.getenv("ClashRoyal_Token"))
 }
-print(headers)
+
 
 class Clan(commands.Cog):
     def __init__(self, bot):
