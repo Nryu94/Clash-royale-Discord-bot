@@ -1,25 +1,18 @@
 import discord
-import os
 import io
 import orjson
 import aiohttp
-import certifi
-import ssl
 from tools.view import View
 from tools.synthesis import Deck
 from tools.set_embed import EmbedPages
 from discord.ext import commands, pages
+from tools.setting import headers, ssl_context
 
 with open("config/emoji.json", "rb") as jf1:
     emoji = orjson.loads(jf1.read())
 
 with open("config/constants.json", "rb") as jf2:
     arena = orjson.loads(jf2.read())
-
-ssl_context = ssl.create_default_context(cafile=certifi.where())
-headers = {
-    "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
-}
 
 
 class Player(commands.Cog):

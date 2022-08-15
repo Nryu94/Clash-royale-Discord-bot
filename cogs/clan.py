@@ -1,22 +1,15 @@
 import discord
-import os
-import ssl
-import certifi
 import orjson
 import aiohttp
 from tools.set_embed import EmbedPages
 from discord.ext import commands, pages
+from tools.setting import headers, ssl_context
 
 with open("config/location.json", "rb") as jf1:
     jid = orjson.loads(jf1.read())
 
 with open("config/constants.json", "rb") as jf2:
     badge = orjson.loads(jf2.read())
-
-ssl_context = ssl.create_default_context(cafile=certifi.where())
-headers = {
-    "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
-}
 
 
 class Clan(commands.Cog):

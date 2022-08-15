@@ -1,18 +1,12 @@
 import discord
-import os
-import ssl
 import aiohttp
-import certifi
 from googletrans import Translator
 from datetime import datetime
 from tools.set_embed import EmbedPages
 from discord.ext import commands, pages
+from tools.setting import headers, ssl_context
 
 translator = Translator(service_urls=['translate.googleapis.com'])
-ssl_context = ssl.create_default_context(cafile=certifi.where())
-headers = {
-    "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
-}
 
 
 class Tournament(commands.Cog):
