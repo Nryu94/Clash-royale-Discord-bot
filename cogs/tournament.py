@@ -13,7 +13,7 @@ ssl_context = ssl.create_default_context(cafile=certifi.where())
 headers = {
     "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
 }
-
+print(headers)
 
 class Tournament(commands.Cog):
     def __init__(self, bot):
