@@ -19,7 +19,7 @@ with open("config/constants.json", "rb") as jf2:
 
 ssl_context = ssl.create_default_context(cafile=certifi.where())
 headers = {
-    "Authorization": "Bearer {}".format(os.getenv("ClashRoyal_Token"))
+    "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
 }
 
 
