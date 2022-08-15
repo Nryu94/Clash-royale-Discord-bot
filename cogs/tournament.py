@@ -77,7 +77,7 @@ class Tournament(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get(PATH, headers=headers, ssl_context=ssl_context) as resp:
                 challenges = await resp.json()
-                print(ch
+                print(challenges, session)
 
                 interaction = EmbedPages(len(challenges))
                 for i in range(len(challenges)):
