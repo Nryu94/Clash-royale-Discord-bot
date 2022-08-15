@@ -13,7 +13,7 @@ ssl_context = ssl.create_default_context(cafile=certifi.where())
 headers = {
     "Authorization": "Bearer {}".format(os.getenv("ClashRoyalToken"))
 }
-print(headers)
+
 
 class Tournament(commands.Cog):
     def __init__(self, bot):
@@ -77,6 +77,7 @@ class Tournament(commands.Cog):
         async with aiohttp.ClientSession() as session:
             async with session.get(PATH, headers=headers, ssl_context=ssl_context) as resp:
                 challenges = await resp.json()
+                print(ch
 
                 interaction = EmbedPages(len(challenges))
                 for i in range(len(challenges)):
