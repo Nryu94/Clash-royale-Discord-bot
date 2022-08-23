@@ -1569,9 +1569,14 @@
       "id": 54000055
     },
     {
-      "name": "Arena 14",
+      "name": "Arena_L10",
       "arena_id": 14,
       "id": 54000056
+    },
+    {
+      "name": "Arena 14",
+      "arena_id": 24,
+      "id": 54000031
     }
   ],
   "cards": [
